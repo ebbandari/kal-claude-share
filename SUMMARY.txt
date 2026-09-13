@@ -1,0 +1,62 @@
+
+==================================================================
+DOES strike_type VARY?
+==================================================================
+
+  lifecycle rows read        585,520
+  metadata_updated events    3,328
+  of which 15-minute markets 3,172
+  unparseable raw_json       0
+  files that failed to read  0
+
+  ALL markets, by strike_type:
+    greater_or_equal          3,196
+    structured                  101
+    greater                      18
+    custom                       13
+
+  15-MINUTE markets only, by strike_type:
+    greater_or_equal          3,172
+
+  by 15-minute series:
+    KXBNB15M             greater_or_equal=335
+    KXBTC15M             greater_or_equal=390
+    KXCOPPER15M          greater_or_equal=11
+    KXDOGE15M            greater_or_equal=328
+    KXETH15M             greater_or_equal=375
+    KXGOLD15M            greater_or_equal=62
+    KXHYPE15M            greater_or_equal=313
+    KXNATGAS15M          greater_or_equal=11
+    KXNEAR15M            greater_or_equal=253
+    KXSILVER15M          greater_or_equal=62
+    KXSOL15M             greater_or_equal=364
+    KXWTI15M             greater_or_equal=62
+    KXXRP15M             greater_or_equal=343
+    KXZEC15M             greater_or_equal=263
+
+  by date, 15-minute markets:
+    2026-06-22   greater_or_equal=56
+    2026-06-27   greater_or_equal=177
+    2026-07-02   greater_or_equal=211
+    2026-07-07   greater_or_equal=192
+    2026-07-12   greater_or_equal=217
+    2026-07-17   greater_or_equal=173
+    2026-07-22   greater_or_equal=202
+    2026-07-27   greater_or_equal=177
+    2026-08-01   greater_or_equal=200
+    2026-08-06   greater_or_equal=244
+    2026-08-11   greater_or_equal=186
+    2026-08-16   greater_or_equal=176
+    2026-08-21   greater_or_equal=201
+    2026-08-26   greater_or_equal=202
+    2026-08-31   greater_or_equal=177
+    2026-09-05   greater_or_equal=166
+    2026-09-10   greater_or_equal=215
+
+  VERDICT: strike_type is CONSTANT across every 15-minute market
+           sampled. Equality pays YES, on this evidence.
+
+  Note: coin_directory is where the event was FOUND, not the coin it
+  describes. The lifecycle stream is not coin-scoped, so series from
+  other coins appear under any directory. Use `series`, not
+  `coin_directory`, to identify the market.
